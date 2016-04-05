@@ -5,7 +5,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
         .state('home', {
             url: '/',
-            templateUrl: 'home/home.html',
+            templateUrl: 'app/home/home.html',
             resolve: {
                 requireNoAuth: function($state, Auth) {
                     return Auth.$requireAuth().then(function(auth) {
@@ -20,7 +20,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('login', {
             url: '/login',
             controller: 'AuthCtrl as authCtrl',
-            templateUrl: 'auth/login.html',
+            templateUrl: 'app/auth/login.html',
             resolve: {
                 requireNoAuth: function($state, Auth) {
                     return Auth.$requireAuth().then(function(auth) {
@@ -35,7 +35,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('register', {
             url: '/register',
             controller: 'AuthCtrl as authCtrl',
-            templatUrl: 'auth/register.html',
+            templatUrl: 'app/auth/register.html',
             resolve: {
                 requireNoAuth: function($state, Auth) {
                     return Auth.$requireAuth().then(function(auth) {
@@ -50,7 +50,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('profile', {
             url: '/profile',
             controller: 'ProfileCtrl as profileCtrl',
-            templateUrl: 'users/profile.html',
+            templateUrl: 'app/users/profile.html',
             resolve: {
                 auth: function($state, Users, Auth) {
                     return Auth.$requireAuth().then(function(auth) {
